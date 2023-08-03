@@ -1,0 +1,27 @@
+Testing result of 500 requests
+Q1:
+    - NO index: (time: 30.34S, RPS : 16)
+    - idx_age: (time; 9.58S, RPS : 52)
+Q2:
+    - NO index:  (time: 67.47S, RPS : 7)
+    - idx_active: (time: 66.77, RPS : 7)
+Q3:
+    - NO index:  (time: 31.95, RPS : 15)
+    - idx_age: (time: 10.45, RPS : 47)
+    - idx_active: (time: 27.34, RPS : 18)
+    - idx_age, idx_active: (time: 10.87, RPS : 45)
+    - idx_active_age: (time: 10.94, RPS : 45)
+    - idx_age_active: (time: 10.44, RPS : 47)
+
+    new (active type = SMALLINT)
+    - NO index:  (time: 25.30, RPS : 19)
+    - idx_age: (time: 10.91, RPS : 45)
+    - idx_active_age: (time: 8.00, RPS : 62)
+
+
+
+Indexes:
+--CREATE INDEX idx_age on users (age);
+--CREATE INDEX idx_active on users (active);
+--CREATE INDEX idx_active_age on users (active,age);
+--CREATE INDEX idx_age_active on users (age, active);

@@ -1,0 +1,32 @@
+Testing result of 1000000 insertions
+Time of insertions:
+    Serial: 6.845 S
+    UUID: 12.044 S
+Size of tables:    
+    Serial: 88 MB
+    UUID: 97 MB
+
+The choice between using SERIAL as ID and UUID as ID:
+Benefits of both:
+    SERIAL as ID:
+        Advantages:
+        - Simplicity.
+        - Smaller storage size compared to UUID.
+        - Efficient indexing and querying, especially for large tables.
+        Considerations:
+        - Predictable and not globally unique.
+
+    UUID as ID:
+        Advantages:
+        - Global unique IDs, even across different databases and systems.
+        - No need for central Authority fo ID generation.
+        - Suitable for distributed systems and data merging.
+        Considerations:
+        - Large storage size according to SERIAL.
+        - Lead to more index size and potentially slower indexing and querying.
+        - Not human readable, which can be less user friendly
+
+Choosing between SERIAL and UUID;
+    - use SERIAL, If you need compact storage, simple indexing and do not require globally unique identifier.
+    - use UUID, If you need globally unique identifier, do not want to rely on central authority, and can handle additional storage.
+The decision is depending on the specific application's needs and future requirements.
